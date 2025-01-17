@@ -1,0 +1,9 @@
+459.80279300543214Paziente895start operation
+508.43969731465694Paziente896start operation
+475.23931091359896 Paziente:895start operation
+1240.2563372220748 Paziente:896start operation
+1939.582367691483 Paziente:897start operation
+485.89933630022625 Paziente:895start operation
+485.89933630022625 Paziente:895start operation
+497.9992822821905 Paziente:895start operation
+1271.8770184813877 Paziente:896start operation
