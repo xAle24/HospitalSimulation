@@ -99,7 +99,7 @@
 				<PresentationFlag>false</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<Length>100</Length>
+				<Length>150</Length>
 				<Rotation>0</Rotation>
 				<ScaleType>BASED_ON_LENGTH</ScaleType>
 				<ModelLength>10</ModelLength>
@@ -1622,31 +1622,35 @@ return displayItems;]]></Body>
 							</ValueColumnReference>
 					</ValuesQuery>
 // arguments and values
-					<Argument><![CDATA[525.0]]></Argument>
+					<Argument><![CDATA[545.0]]></Argument>
 					<Argument><![CDATA[600.0]]></Argument>
 					<Argument><![CDATA[700.0]]></Argument>
 					<Argument><![CDATA[800.0]]></Argument>
 					<Argument><![CDATA[900.0]]></Argument>
-					<Argument><![CDATA[1000.0]]></Argument>
-					<Argument><![CDATA[1100.0]]></Argument>
-					<Argument><![CDATA[910.0]]></Argument>
-					<Argument><![CDATA[810.0]]></Argument>
-					<Value><![CDATA[148.0]]></Value>
+					<Argument><![CDATA[1070.0]]></Argument>
+					<Argument><![CDATA[1169.0]]></Argument>
+					<Argument><![CDATA[930.0]]></Argument>
+					<Argument><![CDATA[1067.0]]></Argument>
+					<Argument><![CDATA[705.0]]></Argument>
+					<Argument><![CDATA[905.0]]></Argument>
 					<Value><![CDATA[170.0]]></Value>
-					<Value><![CDATA[170.0]]></Value>
-					<Value><![CDATA[170.0]]></Value>
-					<Value><![CDATA[170.0]]></Value>
+					<Value><![CDATA[215.0]]></Value>
+					<Value><![CDATA[215.0]]></Value>
+					<Value><![CDATA[215.0]]></Value>
+					<Value><![CDATA[215.0]]></Value>
 					<Value><![CDATA[300.0]]></Value>
-					<Value><![CDATA[400.0]]></Value>
-					<Value><![CDATA[400.0]]></Value>
-					<Value><![CDATA[400.0]]></Value>
+					<Value><![CDATA[370.0]]></Value>
+					<Value><![CDATA[420.0]]></Value>
+					<Value><![CDATA[425.0]]></Value>
+					<Value><![CDATA[180.0]]></Value>
+					<Value><![CDATA[180.0]]></Value>
 				</TableFunction>
 			</TableFunctions>
 			<Connectivity>
 				<TextFile>
 					<Id>1736428922290</Id>
 					<Name><![CDATA[log]]></Name>
-					<X>150</X><Y>1300</Y>
+					<X>1420</X><Y>1220</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1833,6 +1837,21 @@ return displayItems;]]></Body>
 										</GenericParameterSubstituteReference>
 									</GenericParameterSubstitute>
 									<Parameters>
+										<Parameter>
+											<Name><![CDATA[position]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[distance]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[router]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[bleConnected]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[secCounter]]></Name>
+										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
 									<Replication Class="CodeValue">
@@ -4231,13 +4250,15 @@ return displayItems;]]></Body>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.position = "go to operation room";]]></Code>
+								<Code><![CDATA[agent.position = "go to operation room";
+log.println(Math.round(time()) + "s Paziente:" + agent.getId() + " going to operating room");]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.position = "arrived in operation room";]]></Code>
+								<Code><![CDATA[agent.position = "arrived in operation room";
+log.println(Math.round(time()) + "s Paziente:" + agent.getId() + " arrived in operating room");]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -4571,7 +4592,8 @@ return displayItems;]]></Body>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.position = "room";]]></Code>
+								<Code><![CDATA[agent.position = "room";
+log.println(Math.round(time()) + "s Paziente:" + agent.getId() + " arrived in room");]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -5143,7 +5165,7 @@ return displayItems;]]></Body>
 					<Id>1732283594430</Id>
 					<Name><![CDATA[releaseAll]]></Name>
 					<X>470</X><Y>1400</Y>
-					<Label><X>-20</X><Y>0</Y></Label>
+					<Label><X>-10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -6234,7 +6256,7 @@ return displayItems;]]></Body>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[agent.position = "going to change bed";
-log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code>
+log.println(Math.round(time()) + "s Paziente:" + agent.getId() + " start operation");]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -6480,7 +6502,8 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.position = "change bed operation room";]]></Code>
+								<Code><![CDATA[agent.position = "change bed operation room";
+log.println(Math.round(time()) + "s Paziente:" + agent.getId() + " arrived in change bed room");]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -7139,7 +7162,8 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.position = "preparation room";]]></Code>
+								<Code><![CDATA[agent.position = "preparation room";
+log.println(Math.round(time()) + "s Paziente:" + agent.getId() + " going to preparation room");]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -7960,13 +7984,15 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.position = "going to change bed room";]]></Code>
+								<Code><![CDATA[agent.position = "going to change bed room";
+log.println(Math.round(time()) + "s Paziente:" + agent.getId() + " exiting from operation room");]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.position = "change bed operation room";]]></Code>
+								<Code><![CDATA[agent.position = "change bed operation room";
+log.println(Math.round(time()) + "s Paziente:" + agent.getId() + " arrived in change bed room");]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -8421,7 +8447,8 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.position = "change bed department room";]]></Code>
+								<Code><![CDATA[agent.position = "change bed department room";
+log.println(Math.round(time()) + "s Paziente:" + agent.getId() + " going to room");]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -9650,6 +9677,21 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 											</GenericParameterSubstituteReference>
 										</GenericParameterSubstitute>
 										<Parameters>
+											<Parameter>
+												<Name><![CDATA[position]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[distance]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[router]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[bleConnected]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[secCounter]]></Name>
+											</Parameter>
 										</Parameters>
 										<ReplicationFlag>true</ReplicationFlag>
 										<Replication Class="CodeValue">
@@ -9878,6 +9920,21 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 											</GenericParameterSubstituteReference>
 										</GenericParameterSubstitute>
 										<Parameters>
+											<Parameter>
+												<Name><![CDATA[position]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[distance]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[router]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[bleConnected]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[secCounter]]></Name>
+											</Parameter>
 										</Parameters>
 										<ReplicationFlag>true</ReplicationFlag>
 										<Replication Class="CodeValue">
@@ -10417,6 +10474,21 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 											</GenericParameterSubstituteReference>
 										</GenericParameterSubstitute>
 										<Parameters>
+											<Parameter>
+												<Name><![CDATA[position]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[distance]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[router]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[bleConnected]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[secCounter]]></Name>
+											</Parameter>
 										</Parameters>
 										<ReplicationFlag>true</ReplicationFlag>
 										<Replication Class="CodeValue">
@@ -12239,7 +12311,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 				<Path SourceId="1732198383350" TargetId="1734380401948">
 					<Id>1734380377971</Id>
 					<Name><![CDATA[path20]]></Name>
-					<X>825</X><Y>550</Y>
+					<X>865</X><Y>550</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12258,13 +12330,13 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>0.999</X><Y>-24.98</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>25</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>25</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>25</X><Y>25</Y><Z>0</Z></Point>
-						<Point><X>130</X><Y>25</Y><Z>0</Z></Point>
-						<Point><X>105</X><Y>25</Y><Z>0</Z></Point>
-						<Point><X>155</X><Y>25</Y><Z>0</Z></Point>
+						<Point><X>6.063</X><Y>24.254</Y><Z>0</Z></Point>
+						<Point><X>5</X><Y>20</Y><Z>0</Z></Point>
+						<Point><X>-1.063</X><Y>-4.254</Y><Z>0</Z></Point>
+						<Point><X>29.957</X><Y>21.468</Y><Z>0</Z></Point>
+						<Point><X>90</X><Y>25</Y><Z>0</Z></Point>
+						<Point><X>65.043</X><Y>23.532</Y><Z>0</Z></Point>
+						<Point><X>115</X><Y>25</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>false</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -12278,7 +12350,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 				<RectangleNode>
 					<Id>1732198383350</Id>
 					<Name><![CDATA[operatingRoom2]]></Name>
-					<X>820</X><Y>490</Y>
+					<X>860</X><Y>490</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -12380,7 +12452,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 				<Attractor>
 					<Id>1732228660896</Id>
 					<Name><![CDATA[attractor25]]></Name>
-					<X>885</X><Y>515</Y>
+					<X>905</X><Y>515</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12407,14 +12479,14 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 						<SlopeType>angle</SlopeType>	
 					</Slope>
 
-					<Width>120</Width>
+					<Width>100</Width>
 					<Height>60</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
 				<Path SourceId="1734380873512" TargetId="1734380176143">
 					<Id>1734380172284</Id>
 					<Name><![CDATA[path14]]></Name>
-					<X>940</X><Y>430</Y>
+					<X>950</X><Y>430</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12432,11 +12504,11 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-0.83</X><Y>-24.986000000000004</Y><Z>0</Z></Point>
-						<Point><X>-0.83</X><Y>-24.986000000000004</Y><Z>0</Z></Point>
-						<Point><X>-0.665</X><Y>-20.022000000000006</Y><Z>0</Z></Point>
-						<Point><X>0.165</X><Y>4.963999999999999</Y><Z>0</Z></Point>
-						<Point><X>0.165</X><Y>4.963999999999999</Y><Z>0</Z></Point>
+						<Point><X>-11.753</X><Y>-22.065</Y><Z>0</Z></Point>
+						<Point><X>-11.753</X><Y>-22.065</Y><Z>0</Z></Point>
+						<Point><X>-10.665</X><Y>-20.022</Y><Z>0</Z></Point>
+						<Point><X>1.0879999999999992</X><Y>2.043</Y><Z>0</Z></Point>
+						<Point><X>1.0879999999999992</X><Y>2.043</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -12619,11 +12691,11 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-0.83</X><Y>-24.986000000000004</Y><Z>0</Z></Point>
-						<Point><X>-0.83</X><Y>-24.986000000000004</Y><Z>0</Z></Point>
+						<Point><X>-0.8298790218788392</X><Y>-24.98622221963627</Y><Z>0</Z></Point>
+						<Point><X>-0.8298790218788392</X><Y>-24.98622221963627</Y><Z>0</Z></Point>
 						<Point><X>-0.665</X><Y>-20.022000000000006</Y><Z>0</Z></Point>
-						<Point><X>0.165</X><Y>4.963999999999999</Y><Z>0</Z></Point>
-						<Point><X>0.165</X><Y>4.963999999999999</Y><Z>0</Z></Point>
+						<Point><X>0.16487902187883918</X><Y>4.964222219636266</Y><Z>0</Z></Point>
+						<Point><X>0.16487902187883918</X><Y>4.964222219636266</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -12637,7 +12709,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 				<RectangleNode>
 					<Id>1732198370841</Id>
 					<Name><![CDATA[operatingRoom1]]></Name>
-					<X>960</X><Y>490</Y>
+					<X>980</X><Y>490</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -12766,14 +12838,14 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 						<SlopeType>angle</SlopeType>	
 					</Slope>
 
-					<Width>120</Width>
+					<Width>100</Width>
 					<Height>60</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
 				<Path SourceId="1732198370841" TargetId="1734380401948">
 					<Id>1734380400479</Id>
 					<Name><![CDATA[path21]]></Name>
-					<X>965</X><Y>550</Y>
+					<X>985</X><Y>550</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12791,11 +12863,11 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>25</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>25</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>15</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>-10</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>-10</Y><Z>0</Z></Point>
+						<Point><X>-20</X><Y>15</Y><Z>0</Z></Point>
+						<Point><X>-20</X><Y>15</Y><Z>0</Z></Point>
+						<Point><X>-20</X><Y>15</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>false</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -13089,7 +13161,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 				<RectangleNode>
 					<Id>1734380696687</Id>
 					<Name><![CDATA[preparationRoom1]]></Name>
-					<X>960</X><Y>430</Y>
+					<X>980</X><Y>430</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13218,14 +13290,14 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 						<SlopeType>angle</SlopeType>	
 					</Slope>
 
-					<Width>120</Width>
+					<Width>100</Width>
 					<Height>40</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
 				<Path SourceId="1734380696687" TargetId="1732198370841">
 					<Id>1734380726602</Id>
 					<Name><![CDATA[path24]]></Name>
-					<X>1075</X><Y>470</Y>
+					<X>1080</X><Y>470</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13243,7 +13315,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-1.248</X><Y>-24.969</Y><Z>0</Z></Point>
+						<Point><X>-1.2480000000000002</X><Y>-24.969</Y><Z>0</Z></Point>
 						<Point><X>0</X><Y>25</Y><Z>0</Z></Point>
 						<Point><X>0</X><Y>20</Y><Z>0</Z></Point>
 						<Point><X>0</X><Y>-5</Y><Z>0</Z></Point>
@@ -13261,7 +13333,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 				<RectangleNode>
 					<Id>1734380873512</Id>
 					<Name><![CDATA[preparationRoom2]]></Name>
-					<X>820</X><Y>430</Y>
+					<X>860</X><Y>430</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13390,14 +13462,14 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 						<SlopeType>angle</SlopeType>	
 					</Slope>
 
-					<Width>120</Width>
+					<Width>100</Width>
 					<Height>40</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
 				<Path SourceId="1734380873512" TargetId="1732198383350">
 					<Id>1734380886991</Id>
 					<Name><![CDATA[path25]]></Name>
-					<X>935</X><Y>470</Y>
+					<X>960</X><Y>470</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14401,7 +14473,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 						</ColorMapping>
 					</ColorTable>
 					<AutoScale>true</AutoScale>
-					<Scale>1.25</Scale>
+					<Scale>1.0</Scale>
 					<Rotation>180.0</Rotation>
 					<AxisOrder>YZX_AXIS_ORDER</AxisOrder>
 					<ApplyShading>true</ApplyShading>
@@ -14438,7 +14510,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 						</ColorMapping>
 					</ColorTable>
 					<AutoScale>true</AutoScale>
-					<Scale>1.25</Scale>
+					<Scale>1.0</Scale>
 					<Rotation>180.0</Rotation>
 					<AxisOrder>YZX_AXIS_ORDER</AxisOrder>
 					<ApplyShading>true</ApplyShading>
@@ -14475,7 +14547,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 						</ColorMapping>
 					</ColorTable>
 					<AutoScale>true</AutoScale>
-					<Scale>1.25</Scale>
+					<Scale>1.0</Scale>
 					<Rotation>180.0</Rotation>
 					<AxisOrder>YZX_AXIS_ORDER</AxisOrder>
 					<ApplyShading>true</ApplyShading>
@@ -14512,7 +14584,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 						</ColorMapping>
 					</ColorTable>
 					<AutoScale>true</AutoScale>
-					<Scale>1.25</Scale>
+					<Scale>1.0</Scale>
 					<Rotation>180.0</Rotation>
 					<AxisOrder>YZX_AXIS_ORDER</AxisOrder>
 					<ApplyShading>true</ApplyShading>
@@ -14522,7 +14594,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 				<Polyline>
 					<Id>1732198143676</Id>
 					<Name><![CDATA[polyline5]]></Name>
-					<X>950</X><Y>560</Y>
+					<X>970</X><Y>560</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14544,14 +14616,14 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 					<Points>
 					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 					   <Point><X>0</X><Y>-80</Y><Z>0</Z></Point>
-					   <Point><X>120</X><Y>-80</Y><Z>0</Z></Point>
+					   <Point><X>100</X><Y>-80</Y><Z>0</Z></Point>
 					</Points>
 					<Closed>false</Closed>
 				</Polyline>
 				<Polyline>
 					<Id>1732198195040</Id>
 					<Name><![CDATA[polyline6]]></Name>
-					<X>810</X><Y>560</Y>
+					<X>850</X><Y>560</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14573,7 +14645,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 					<Points>
 					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 					   <Point><X>0</X><Y>-80</Y><Z>0</Z></Point>
-					   <Point><X>120</X><Y>-80</Y><Z>0</Z></Point>
+					   <Point><X>100</X><Y>-80</Y><Z>0</Z></Point>
 					</Points>
 					<Closed>false</Closed>
 				</Polyline>
@@ -14714,13 +14786,13 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 				<Figure3D>
 					<Id>1732229164918</Id>
 					<Name><![CDATA[ot]]></Name>
-					<X>980</X><Y>520</Y>
+					<X>1000</X><Y>520</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>980</X><Y>520</Y><Z>0</Z>
+					<X>1000</X><Y>520</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[chirurgia]]></PackageName>
@@ -14741,7 +14813,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 						</ColorMapping>
 					</ColorTable>
 					<AutoScale>true</AutoScale>
-					<Scale>1.25</Scale>
+					<Scale>1.0</Scale>
 					<Rotation>90.0</Rotation>
 					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
 					<ApplyShading>true</ApplyShading>
@@ -14864,13 +14936,13 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 				<Figure3D>
 					<Id>1732234810977</Id>
 					<Name><![CDATA[ot1]]></Name>
-					<X>840</X><Y>520</Y>
+					<X>880</X><Y>520</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>840</X><Y>520</Y><Z>0</Z>
+					<X>880</X><Y>520</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[chirurgia]]></PackageName>
@@ -14891,7 +14963,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 						</ColorMapping>
 					</ColorTable>
 					<AutoScale>true</AutoScale>
-					<Scale>1.25</Scale>
+					<Scale>1.0</Scale>
 					<Rotation>90.0</Rotation>
 					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
 					<ApplyShading>true</ApplyShading>
@@ -15443,7 +15515,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 				<Line>
 					<Id>1734380138417</Id>
 					<Name><![CDATA[line38]]></Name>
-					<X>830</X><Y>560</Y>
+					<X>870</X><Y>560</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -15460,7 +15532,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 					<BeginArrowStyle>0</BeginArrowStyle>
 					<EndArrowSize>1</EndArrowSize>
 					<EndArrowStyle>0</EndArrowStyle>
-					<Dx>130</Dx>
+					<Dx>100</Dx>
 					<Dy>0</Dy>
 					<Dz>0</Dz>
 				</Line>
@@ -15510,30 +15582,6 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 					<EndArrowStyle>0</EndArrowStyle>
 					<Dx>30</Dx>
 					<Dy>0</Dy>
-					<Dz>0</Dz>
-				</Line>
-				<Line>
-					<Id>1734380749115</Id>
-					<Name><![CDATA[line41]]></Name>
-					<X>950</X><Y>420</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor>-3308225</LineColor>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<BeginArrowSize>1</BeginArrowSize>
-					<BeginArrowStyle>0</BeginArrowStyle>
-					<EndArrowSize>1</EndArrowSize>
-					<EndArrowStyle>0</EndArrowStyle>
-					<Dx>0</Dx>
-					<Dy>60</Dy>
 					<Dz>0</Dz>
 				</Line>
 				<Line>
@@ -15635,7 +15683,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 				<Line>
 					<Id>1734380850979</Id>
 					<Name><![CDATA[line46]]></Name>
-					<X>810</X><Y>420</Y>
+					<X>850</X><Y>420</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -15659,7 +15707,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 				<Line>
 					<Id>1734380850981</Id>
 					<Name><![CDATA[line47]]></Name>
-					<X>810</X><Y>420</Y>
+					<X>850</X><Y>420</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -15676,14 +15724,14 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 					<BeginArrowStyle>0</BeginArrowStyle>
 					<EndArrowSize>1</EndArrowSize>
 					<EndArrowStyle>0</EndArrowStyle>
-					<Dx>125</Dx>
+					<Dx>90</Dx>
 					<Dy>0</Dy>
 					<Dz>0</Dz>
 				</Line>
 				<Line>
 					<Id>1734380850983</Id>
 					<Name><![CDATA[line48]]></Name>
-					<X>950</X><Y>420</Y>
+					<X>970</X><Y>420</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -15707,7 +15755,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 				<Line>
 					<Id>1734380850985</Id>
 					<Name><![CDATA[line49]]></Name>
-					<X>945</X><Y>420</Y>
+					<X>960</X><Y>420</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -15724,14 +15772,14 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 					<BeginArrowStyle>0</BeginArrowStyle>
 					<EndArrowSize>1</EndArrowSize>
 					<EndArrowStyle>0</EndArrowStyle>
-					<Dx>5</Dx>
+					<Dx>10</Dx>
 					<Dy>0</Dy>
 					<Dz>0</Dz>
 				</Line>
 				<Line>
 					<Id>1734380916116</Id>
 					<Name><![CDATA[line50]]></Name>
-					<X>750</X><Y>560</Y>
+					<X>850</X><Y>560</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -15748,7 +15796,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 					<BeginArrowStyle>0</BeginArrowStyle>
 					<EndArrowSize>1</EndArrowSize>
 					<EndArrowStyle>0</EndArrowStyle>
-					<Dx>70</Dx>
+					<Dx>10</Dx>
 					<Dy>0</Dy>
 					<Dz>0</Dz>
 				</Line>
@@ -17704,7 +17752,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 				<PresentationFlag>false</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<Length>100</Length>
+				<Length>150</Length>
 				<Rotation>0</Rotation>
 				<ScaleType>BASED_ON_LENGTH</ScaleType>
 				<ModelLength>10</ModelLength>
@@ -17820,14 +17868,36 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 	double dy = y - patient.getY();
 	double dz = z - patient.getZ();
 	double dist = sqrt( dx*dx + dy*dy + dz*dz );
-	if( dist < 50 ) {
+	if( dist < 7 ) {
 		patient.distance = (int)dist;
 		patient.router = this.getId();
 		patient.secCounter = 0;
+		logBLE.println(Math.round(time()) + "s Paziente: " + patient.getId() 
+		+ " dist: " + Math.round(dist) + "m from: " + this.getId());
 	}
 }]]></Action>
 				</Event>
 			</Events>
+			<Connectivity>
+				<TextFile>
+					<Id>1737130380759</Id>
+					<Name><![CDATA[logBLE]]></Name>
+					<X>50</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<FileType>FILE</FileType>
+					<Url><![CDATA[]]></Url>
+					<ResourceReference>
+						<PackageName><![CDATA[chirurgia]]></PackageName>
+						<ClassName><![CDATA[logBLE.txt]]></ClassName>
+					</ResourceReference>
+					<FileMode>WRITE_APPEND</FileMode>
+					<CharsetName>null</CharsetName>
+					<Separators></Separators>
+				</TextFile>
+			</Connectivity>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1734452330489</Id>
@@ -17937,7 +18007,7 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 					<LineColor>-1644806</LineColor>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
-					<RadiusX>50</RadiusX>
+					<RadiusX>40</RadiusX>
 					<RadiusY>40</RadiusY>
 					<Rotation>0.0</Rotation>
 					<FillColor/>
@@ -18125,6 +18195,11 @@ log.println(time() + " Paziente:" + agent.getId() + "start operation");]]></Code
 		</Resource>
 		<Resource>
 			<Path><![CDATA[log.txt]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+			<Location>FILE_SYSTEM</Location>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[logBLE.txt]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 			<Location>FILE_SYSTEM</Location>
 		</Resource>

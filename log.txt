@@ -1,9 +1,109 @@
-459.80279300543214Paziente895start operation
-508.43969731465694Paziente896start operation
-475.23931091359896 Paziente:895start operation
-1240.2563372220748 Paziente:896start operation
-1939.582367691483 Paziente:897start operation
-485.89933630022625 Paziente:895start operation
-485.89933630022625 Paziente:895start operation
-497.9992822821905 Paziente:895start operation
-1271.8770184813877 Paziente:896start operation
+498s Paziente:895 start operation
+517s Paziente:895 arrived in change bed room
+530s Paziente:895 going to preparation room
+588s Paziente:895 going to operating room
+592s Paziente:895 arrived in operating room
+1192s Paziente:895 exiting from operation room
+1203s Paziente:895 arrived in change bed room
+1222s Paziente:895 going to room
+1242s Paziente:895 arrived in room
+1272s Paziente:896 start operation
+1294s Paziente:896 arrived in change bed room
+1315s Paziente:896 going to preparation room
+1364s Paziente:896 going to operating room
+1369s Paziente:896 arrived in operating room
+1990s Paziente:896 exiting from operation room
+2011s Paziente:896 arrived in change bed room
+2030s Paziente:896 going to room
+2051s Paziente:896 arrived in room
+2081s Paziente:897 start operation
+2095s Paziente:897 arrived in change bed room
+2111s Paziente:897 going to preparation room
+2179s Paziente:897 going to operating room
+2184s Paziente:897 arrived in operating room
+2756s Paziente:897 exiting from operation room
+2769s Paziente:897 arrived in change bed room
+2791s Paziente:897 going to room
+2805s Paziente:897 arrived in room
+2841s Paziente:898 start operation
+2852s Paziente:898 arrived in change bed room
+2872s Paziente:898 going to preparation room
+2912s Paziente:898 going to operating room
+2917s Paziente:898 arrived in operating room
+3399s Paziente:898 exiting from operation room
+3416s Paziente:898 arrived in change bed room
+3438s Paziente:898 going to room
+3449s Paziente:898 arrived in room
+3485s Paziente:899 start operation
+3506s Paziente:899 arrived in change bed room
+3523s Paziente:899 going to preparation room
+3601s Paziente:899 going to operating room
+3605s Paziente:899 arrived in operating room
+4242s Paziente:899 exiting from operation room
+4255s Paziente:899 arrived in change bed room
+4277s Paziente:899 going to room
+4298s Paziente:899 arrived in room
+4328s Paziente:900 start operation
+4347s Paziente:900 arrived in change bed room
+4368s Paziente:900 going to preparation room
+4423s Paziente:900 going to operating room
+4428s Paziente:900 arrived in operating room
+5048s Paziente:900 exiting from operation room
+5066s Paziente:900 arrived in change bed room
+5088s Paziente:900 going to room
+5107s Paziente:900 arrived in room
+5137s Paziente:901 start operation
+5152s Paziente:901 arrived in change bed room
+5170s Paziente:901 going to preparation room
+5219s Paziente:901 going to operating room
+5224s Paziente:901 arrived in operating room
+5722s Paziente:901 exiting from operation room
+5735s Paziente:901 arrived in change bed room
+5761s Paziente:901 going to room
+5776s Paziente:901 arrived in room
+5811s Paziente:902 start operation
+5824s Paziente:902 arrived in change bed room
+5846s Paziente:902 going to preparation room
+5932s Paziente:902 going to operating room
+5937s Paziente:902 arrived in operating room
+6550s Paziente:902 exiting from operation room
+6571s Paziente:902 arrived in change bed room
+6590s Paziente:902 going to room
+6603s Paziente:902 arrived in room
+6639s Paziente:903 start operation
+6665s Paziente:903 arrived in change bed room
+6681s Paziente:903 going to preparation room
+6751s Paziente:903 going to operating room
+6757s Paziente:903 arrived in operating room
+7500s Paziente:903 exiting from operation room
+7515s Paziente:903 arrived in change bed room
+7537s Paziente:903 going to room
+7563s Paziente:903 arrived in room
+7593s Paziente:904 start operation
+7610s Paziente:904 arrived in change bed room
+7631s Paziente:904 going to preparation room
+7686s Paziente:904 going to operating room
+7690s Paziente:904 arrived in operating room
+8315s Paziente:904 exiting from operation room
+8334s Paziente:904 arrived in change bed room
+8354s Paziente:904 going to room
+8371s Paziente:904 arrived in room
+466s Paziente:895 start operation
+475s Paziente:895 arrived in change bed room
+482s Paziente:895 going to preparation room
+528s Paziente:895 going to operating room
+530s Paziente:895 arrived in operating room
+956s Paziente:895 exiting from operation room
+961s Paziente:895 arrived in change bed room
+972s Paziente:895 going to room
+982s Paziente:895 arrived in room
+997s Paziente:896 start operation
+1008s Paziente:896 arrived in change bed room
+1019s Paziente:896 going to preparation room
+1068s Paziente:896 going to operating room
+1070s Paziente:896 arrived in operating room
+476s Paziente:897 start operation
+489s Paziente:897 arrived in change bed room
+497s Paziente:897 going to preparation room
+543s Paziente:897 going to operating room
+546s Paziente:897 arrived in operating room
